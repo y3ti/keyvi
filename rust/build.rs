@@ -59,8 +59,6 @@ fn main() {
         println!("cargo:rustc-link-lib=dylib=snappy");
     }
 
-    println!("cargo:rustc-link-lib=dylib=stdc++");
-
     let bindings = bindgen::Builder::default()
         // The input header we would like to generate bindings for.
         .header("keyvi_core/keyvi/include/keyvi/c_api/c_api.h")
