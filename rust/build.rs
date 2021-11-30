@@ -59,6 +59,13 @@ fn main() {
         println!("cargo:rustc-link-lib=dylib=snappy");
     }
 
+    let target = std::env::var("TARGET").unwrap_or_default();
+    if target == "x86_64-apple-darwin" || target == "aarch64-apple-darwin" {
+        println!("cargo:rustc-link-lib=dylib=c++");
+    } else {
+        println!("cargo:rustc-link-lib=dylib=stdc++");
+    }
+
     let bindings = bindgen::Builder::default()
         // The input header we would like to generate bindings for.
         .header("keyvi_core/keyvi/include/keyvi/c_api/c_api.h")
