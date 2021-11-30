@@ -31,7 +31,7 @@ set (_OS_LIBRARIES "")
 # OSX specifics
 if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
     set (_KEYVI_COMPILE_DEFINITIONS "${_KEYVI_COMPILE_DEFINITIONS} OS_MACOSX")
-    set (_KEYVI_CXX_FLAGS "${_KEYVI_CXX_FLAGS} -mmacosx-version-min=10.7")
+    set (_KEYVI_CXX_FLAGS "${_KEYVI_CXX_FLAGS} -mmacosx-version-min=11.0")
 endif()
 
 # build type specific settings
